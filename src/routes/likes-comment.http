@@ -1,0 +1,19 @@
+# LIKE COMMENT
+
+PUT http://localhost:3333/post/clups5pqn00022ym3j2aca76o/comment/clupsh5k900037ryty54a1zn2/like
+content-type: application/json
+
+{
+    "authorId": "clups5b7n00002ym3ydnxjngs"
+}
+
+###
+
+# REMOVE LIKE FROM COMMENT
+
+PUT http://localhost:3333/post/clups5pqn00022ym3j2aca76o/comment/clupsh5k900037ryty54a1zn2/unlike
+content-type: application/json
+
+{
+    "authorId": "clups5b7n00002ym3ydnxjngs"
+}

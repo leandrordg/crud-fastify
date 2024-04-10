@@ -1,0 +1,38 @@
+# GET ALL COMMENTS FROM A POST
+
+GET http://localhost:3333/post/clups5pqn00022ym3j2aca76o/comments
+
+###
+
+# CREATE A COMMENT FOR A POST BY ID
+
+POST http://localhost:3333/post/clups5pqn00022ym3j2aca76o/comment/create
+content-type: application/json
+
+{
+  "content": "This is a another comment",
+  "authorId": "clups5b7n00002ym3ydnxjngs"
+}
+
+###
+
+# UPDATE A COMMENT FOR A POST BY ID
+
+PUT http://localhost:3333/post/clups5pqn00022ym3j2aca76o/comment/clups8xr500082ym3jifkpozu/update
+content-type: application/json
+
+{
+  "content": "UPDATED COMMENT :)",
+  "authorId": "clups5b7n00002ym3ydnxjngs"
+}
+
+###
+
+# DELETE A COMMENT FOR A POST BY ID
+
+DELETE http://localhost:3333/post/clups5pqn00022ym3j2aca76o/comment/clups8jcr00062ym3jjdjoyyz/delete
+content-type: application/json
+
+{
+  "authorId": "clups5b7n00002ym3ydnxjngs"
+}

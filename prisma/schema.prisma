@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                    String  @id @default(cuid())
+  birthday              String?
+  createdAt             Int
+  emailAddresses        Email[]
+  externalAccounts      Json?
+  externalId            String
+  firstName             String
+  gender                String?
+  imageUrl              String
+  lastName              String
+  lastSignInAt          Int
+  passwordEnabled       Boolean
+  phoneNumbers          Json?
+  primaryEmailAddressId String
+  primaryPhoneNumberId  String?
+  primaryWeb3WalletId   String?
+  privateMetadata       Json
+  profileImageUrl       String
+  publicMetadata        Json
+  twoFactorEnabled      Boolean
+  unsafeMetadata        Json
+  updatedAt             Int
+  username              String?
+  web3Wallets           Json?
+}
+
+model Email {
+  id             String       @id @default(cuid())
+  emailAddress   String
+  linkedTo       Json?
+  object         String
+  verification   Verification @relation(fields: [verificationId], references: [id], onDelete: Cascade)
+  user           User?        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId         String?
+  verificationId String
+}
+
+model Verification {
+  id       String  @id @default(cuid())
+  status   String
+  strategy String
+  email    Email[]
+}

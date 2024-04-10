@@ -1,0 +1,30 @@
+{
+  "name": "crud-fastify-prisma",
+  "version": "1.0.0",
+  "description": "Um CRUD simples com Fastify e Prisma",
+  "type": "module",
+  "license": "ISC",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsup src/server.ts"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Leandro Rodrigues",
+    "url": "https://leandro-dev.vercel.app"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5",
+    "pino-pretty": "^11.0.0",
+    "prisma": "^5.12.1",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.4",
+    "zod": "^3.22.4"
+  },
+  "dependencies": {
+    "@prisma/client": "5.12.1",
+    "fastify": "^4.26.2"
+  }
+}

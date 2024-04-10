@@ -1,0 +1,25 @@
+# GET USERS WHERE LIKED POST
+
+GET http://localhost:3333/post/clups5pqn00022ym3j2aca76o/likes
+
+###
+
+# ADD LIKE TO POST
+
+PUT http://localhost:3333/post/clups5pqn00022ym3j2aca76o/like
+content-type: application/json
+
+{
+    "authorId": "clups5b7n00002ym3ydnxjngs"
+}
+
+###
+
+# REMOVE LIKE FROM POST
+
+PUT http://localhost:3333/post/clups5pqn00022ym3j2aca76o/unlike
+content-type: application/json
+
+{
+    "authorId": "clups5b7n00002ym3ydnxjngs"
+}

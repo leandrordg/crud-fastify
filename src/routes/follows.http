@@ -1,0 +1,29 @@
+# GET USER FOLLOWS
+
+GET http://localhost:3333/u/clupwtk0c0000tmaff7ynud9b/followers
+
+###
+
+# GET USER FOLLOWING
+
+GET http://localhost:3333/u/clupwtrg40001tmaffb9zwc8t/following
+
+###
+
+# FOLLOW USER
+
+PUT http://localhost:3333/u/clupwtrg40001tmaffb9zwc8t/follow
+content-type: application/json
+
+{
+    "authorId": "clupwtk0c0000tmaff7ynud9b"
+}
+
+###
+
+DELETE http://localhost:3333/u/clupwtk0c0000tmaff7ynud9b/follower/remove
+content-type: application/json
+
+{
+    "authorId": "clupwtrg40001tmaffb9zwc8t"
+}

@@ -1,0 +1,41 @@
+# GET ALL USERS
+
+GET http://localhost:3333/users
+
+###
+
+# GET USER BY ID
+
+GET http://localhost:3333/u/clups5b7n00002ym3ydnxjngs
+
+###
+
+# CREATE USER
+
+POST http://localhost:3333/u/create
+content-type: application/json
+
+{
+    "name": "Leandro",
+    "email": "lj251004@gmail.com",
+    "password": "@Leandro13"
+}
+
+###
+
+# UPDATE USER
+
+PUT http://localhost:3333/u/clup1jxmq0000ep0nsimfzfhz/update
+content-type: application/json
+
+{
+    "name": "Leandro Rodrigues",
+    "email": "lj251004@gmail.com",
+    "password": "@Leandro13"
+}
+
+###
+
+# DELETE USER
+
+DELETE http://localhost:3333/u/clup1jxmq0000ep0nsimfzfhz/delete
