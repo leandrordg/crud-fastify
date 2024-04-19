@@ -17,8 +17,8 @@ content-type: application/json
 
 {
     "name": "Leandro",
-    "email": "lj251004@gmail.com",
-    "password": "@Leandro13"
+    "email": "leandro@leandro.com",
+    "password": "leandro123"
 }
 
 ###
@@ -29,9 +29,9 @@ PUT http://localhost:3333/u/clup1jxmq0000ep0nsimfzfhz/update
 content-type: application/json
 
 {
-    "name": "Leandro Rodrigues",
-    "email": "lj251004@gmail.com",
-    "password": "@Leandro13"
+    "name": "Leandro Atualizado",
+    "email": "leandroatt@leandro.com",
+    "password": "leandro321"
 }
 
 ###
