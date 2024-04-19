@@ -22,9 +22,9 @@ POST http://localhost:3333/post/create
 content-type: application/json
 
 {
-    "title": "First Post",
-    "content": "Content from First Post",
-    "authorId": "clups5b7n00002ym3ydnxjngs"
+    "title": "",
+    "content": "",
+    "authorId": ""
 }
 
 ###
@@ -35,9 +35,9 @@ PUT http://localhost:3333/post/clups5pqn00022ym3j2aca76o/update
 content-type: application/json
 
 {
-    "title": "Post Updated",
-    "content": "I hope this post will be famous",
-    "authorId": "clups5b7n00002ym3ydnxjngs"
+    "title": "",
+    "content": "",
+    "authorId": ""
 }
 
 ###
@@ -48,5 +48,5 @@ DELETE http://localhost:3333/post/cluprfeam0001zx8v8d730j5e/delete
 content-type: application/json
 
 {
-    "authorId": "clupr6ce6000012ckb9h2s6je"
+    "authorId": ""
 }

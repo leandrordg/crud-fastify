@@ -1,13 +1,14 @@
 {
-  "name": "crud-fastify-prisma",
+  "name": "crud-fastify",
   "version": "1.0.0",
   "description": "Um CRUD simples com Fastify e Prisma",
   "type": "module",
-  "license": "ISC",
+  "license": "MIT",
   "main": "src/server.ts",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsup src/server.ts"
+    "build": "tsup src/server.ts",
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": {

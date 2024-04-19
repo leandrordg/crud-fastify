@@ -16,7 +16,7 @@ PUT http://localhost:3333/u/clupwtrg40001tmaffb9zwc8t/follow
 content-type: application/json
 
 {
-    "authorId": "clupwtk0c0000tmaff7ynud9b"
+    "authorId": ""
 }
 
 ###
@@ -25,5 +25,5 @@ DELETE http://localhost:3333/u/clupwtk0c0000tmaff7ynud9b/follower/remove
 content-type: application/json
 
 {
-    "authorId": "clupwtrg40001tmaffb9zwc8t"
+    "authorId": ""
 }

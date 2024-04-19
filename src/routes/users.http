@@ -16,9 +16,9 @@ POST http://localhost:3333/u/create
 content-type: application/json
 
 {
-    "name": "Leandro",
-    "email": "leandro@leandro.com",
-    "password": "leandro123"
+    "name": "",
+    "email": "",
+    "password": ""
 }
 
 ###
@@ -29,9 +29,9 @@ PUT http://localhost:3333/u/clup1jxmq0000ep0nsimfzfhz/update
 content-type: application/json
 
 {
-    "name": "Leandro Atualizado",
-    "email": "leandroatt@leandro.com",
-    "password": "leandro321"
+    "name": "",
+    "email": "",
+    "password": ""
 }
 
 ###

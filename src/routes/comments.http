@@ -10,8 +10,8 @@ POST http://localhost:3333/post/clups5pqn00022ym3j2aca76o/comment/create
 content-type: application/json
 
 {
-  "content": "This is a another comment",
-  "authorId": "clups5b7n00002ym3ydnxjngs"
+  "content": "",
+  "authorId": ""
 }
 
 ###
@@ -22,8 +22,8 @@ PUT http://localhost:3333/post/clups5pqn00022ym3j2aca76o/comment/clups8xr500082y
 content-type: application/json
 
 {
-  "content": "UPDATED COMMENT :)",
-  "authorId": "clups5b7n00002ym3ydnxjngs"
+  "content": "",
+  "authorId": ""
 }
 
 ###
@@ -34,5 +34,5 @@ DELETE http://localhost:3333/post/clups5pqn00022ym3j2aca76o/comment/clups8jcr000
 content-type: application/json
 
 {
-  "authorId": "clups5b7n00002ym3ydnxjngs"
+  "authorId": ""
 }

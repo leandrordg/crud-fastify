@@ -14,46 +14,81 @@ datasource db {
 }
 
 model User {
-  id                    String  @id @default(cuid())
-  birthday              String?
-  createdAt             Int
-  emailAddresses        Email[]
-  externalAccounts      Json?
-  externalId            String
-  firstName             String
-  gender                String?
-  imageUrl              String
-  lastName              String
-  lastSignInAt          Int
-  passwordEnabled       Boolean
-  phoneNumbers          Json?
-  primaryEmailAddressId String
-  primaryPhoneNumberId  String?
-  primaryWeb3WalletId   String?
-  privateMetadata       Json
-  profileImageUrl       String
-  publicMetadata        Json
-  twoFactorEnabled      Boolean
-  unsafeMetadata        Json
-  updatedAt             Int
-  username              String?
-  web3Wallets           Json?
+  id            String        @id @default(cuid())
+  first_name    String?
+  last_name     String?
+  email_address String        @unique
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  posts         Post[]
+  comments      Comment[]
+  likes         Like[]
+  comment_likes CommentLike[]
+  followers     Follows[]     @relation("following")
+  following     Follows[]     @relation("follower")
+
+  @@map("users")
 }
 
-model Email {
-  id             String       @id @default(cuid())
-  emailAddress   String
-  linkedTo       Json?
-  object         String
-  verification   Verification @relation(fields: [verificationId], references: [id], onDelete: Cascade)
-  user           User?        @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId         String?
-  verificationId String
+model Follows {
+  follower    User   @relation("follower", fields: [followerId], references: [id], onDelete: Cascade)
+  followerId  String
+  following   User   @relation("following", fields: [followingId], references: [id], onDelete: Cascade)
+  followingId String
+
+  @@id([followerId, followingId])
 }
 
-model Verification {
-  id       String  @id @default(cuid())
-  status   String
-  strategy String
-  email    Email[]
+model Post {
+  id        String    @id @default(cuid())
+  title     String
+  content   String?
+  updated   Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  author    User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId  String
+  comments  Comment[]
+  likes     Like[]
+
+  @@map("posts")
+}
+
+model Comment {
+  id            String        @id @default(cuid())
+  content       String
+  updated       Boolean       @default(false)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  author        User          @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId      String
+  post          Post          @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId        String
+  comment_likes CommentLike[]
+
+  @@map("comments")
+}
+
+model Like {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId  String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId    String
+
+  @@map("likes")
+}
+
+model CommentLike {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId  String
+  comment   Comment  @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  commentId String
+
+  @@map("comment_likes")
 }
